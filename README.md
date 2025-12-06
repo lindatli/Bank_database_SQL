@@ -10,15 +10,14 @@ The goal is to help a bank understand its clients, accounts, loans, credit cards
 
 The project uses the PKDD’99 financial dataset, which:
 
-- Contains eight related tables and around one million rows of data
-- Covers clients, accounts, dispositions, permanent orders, transactions, loans, credit cards and district-level demographic data :contentReference[oaicite:1]{index=1}  
-- Is provided as a collection of CSV files
+- Contains eight related tables and around one million rows of data.
+- Covers clients, accounts, dispositions, permanent orders, transactions, loans, credit cards and district-level demographic data.
+- Is provided as a collection of CSV files.
 
 Key preprocessing steps:
 
 - CSV files are loaded into Python, inspected with `pandas`, and cleaned.
 - Date columns are originally stored as integers in `YYYYMMDD` format; helper functions convert them into proper `datetime` objects before loading into SQL tables with `DATE`/`DATETIME` constraints.
-- A few incomplete or unnecessary columns are removed from the transactions table for clarity.
 
 ---
 
@@ -35,7 +34,7 @@ The schema is based on an ER/EER diagram that captures the relationships between
 - **Dispositions** – links clients to accounts and define rights:
   - `disp_id` (PK), `client_id`, `account_id`, `disp_type` (`owner` / `user`)
 - **Permanent orders** – standing payment instructions:
-  - `order_id`, `account_id`, `bank_to`, `account_to`, `amount`, `k_symbol` :contentReference[oaicite:8]{index=8}  
+  - `order_id`, `account_id`, `bank_to`, `account_to`, `amount`, `k_symbol` 
 - **Transactions** – individual account movements:
   - `trans_id` (PK), `account_id`, `date`, `type`, `operation`, `amount`, `balance`, plus optional bank/account fields
 - **Loans** – loans granted to accounts:
@@ -98,7 +97,7 @@ The notebook implements a set of queries that demonstrate how the bank can use t
    Helps identify regions with higher risk of default and inform approval policies.
 
 5. **Transaction volumes over time**  
-   Counts how many transactions were made each year from 1993 to 1998, giving a view of growth trends in customer activity. :contentReference[oaicite:27]{index=27}  
+   Counts how many transactions were made each year from 1993 to 1998, giving a view of growth trends in customer activity.
 
 6. **Dynamic transaction management query**  
    Demonstrates multi-statement transaction control: inserting a new loan application, updating its status, and deleting loans with very short duration using `BEGIN`, `SAVEPOINT`, `ROLLBACK`, and `COMMIT` to keep the database consistent.
