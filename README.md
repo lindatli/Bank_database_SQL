@@ -1,6 +1,6 @@
 # Bank Client Analytics Database
 
-This project builds a relational database and analytics layer on top of the **PKDD’99 financial dataset**, a public banking dataset used for loan risk modelling. It was originally developed as a university coursework project and has been remade into my personal portfolio version.
+This project builds a relational database and analytics layer on top of the **PKDD’99 financial dataset**, a public banking dataset used for loan risk modelling. It was originally done as a university coursework project.
 
 The goal is to help a bank understand its clients, accounts, loans, credit cards and transactions
 
@@ -13,12 +13,6 @@ The project uses the PKDD’99 financial dataset, which:
 - Contains eight related tables and around one million rows of data.
 - Covers clients, accounts, dispositions, permanent orders, transactions, loans, credit cards and district-level demographic data.
 - Is provided as a collection of CSV files.
-
-Key preprocessing steps:
-
-- CSV files are loaded into Python, inspected with `pandas`, and cleaned.
-- Date columns are originally stored as integers in `YYYYMMDD` format; helper functions convert them into proper `datetime` objects before loading into SQL tables with `DATE`/`DATETIME` constraints.
-
 ---
 
 ## Data model
