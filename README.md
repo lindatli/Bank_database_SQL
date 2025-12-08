@@ -2,7 +2,7 @@
 
 This project builds a relational database and analytics layer on top of the **PKDD’99 financial dataset**, a public banking dataset used for loan risk modelling. It was originally done as a university coursework project.
 
-The goal is to help a bank understand its clients, accounts, loans, credit cards and transactions
+The goal is to help a bank understand its clients, accounts, loans, credit cards and transactions.
 
 ---
 
@@ -54,10 +54,8 @@ The project runs entirely in a Jupyter Notebook, combining Python and SQL:
 - **Python** for data loading, cleaning, and orchestration
 - **pandas** to read CSV files and inspect/transform the data
 - **SQLite** as the relational database
-- **peewee** and/or `sqlite3` for table creation, inserts, queries, and view/trigger definitions 
 - **DB Browser for SQLite** to visually inspect tables and views
 - Additional Python libraries: `os` for file management and `datetime` for handling date objects
-
 ---
 
 ## Features
